@@ -2,7 +2,9 @@
 UTM to LatLong microservice
 ===========================
 
-A python micro service template for transforming a JSON entity stream. This service is designed to be used with the `HTTP transform <https://docs.sesam.io/configuration.html#the-http-transform>`_ in a Sesam service instance. 
+A python micro service template for transforming a JSON entity stream. This service is designed to be used as a microservice system with
+the `HTTP transform <https://docs.sesam.io/configuration.html#the-http-transform>`_ in a Sesam service instance.
+
 It converts UTM33 (EUREF89 aka GAB) coordinates to LatLong (GPS coordinates aka WGS84).
 
 
