@@ -69,21 +69,17 @@ Configuration
 
 You can configure the service with the following environment variables:
 
-.. list-table::
-   :header-rows: 1
-   :widths: 20, 20, 60
+===================== ==================================================================================      ==========
+Variable              Description                                                                             Default
 
-   * - Variable
-     - Description
-     - Default value
 
-   * - ``EASTING_PROPERTY``
-     - The name of the property holding the "easting" value. The value itself can be either a string, float, int or decimal. If a string, it must be castable to a float.
-     - "easting"
+``EASTING_PROPERTY``  The name of the property holding the "easting" value. The value itself can be
+                      either a string, float, int or decimal. If a string, it must be castable to a float.    "easting"
 
-   * - ``NORTHING_PROPERTY``
-     - The name of the property holding the "northing" value. The value itself can be either a string, float, int or decimal. If a string, it must be castable to a float.
-     - "easting"
+``NORTHING_PROPERTY`` The name of the property holding the "northing" value. The value itself can be either   "northing"
+                      a string, float, int or decimal. If a string, it must be castable to a float.          
+
+
 
    * - ``ZONE_PROPERTY``
      - The name of the property holding the "zone" value. The value itself can be either a string, float, int or decimal. It must be castable to an int.
