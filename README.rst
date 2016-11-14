@@ -69,50 +69,40 @@ Configuration
 
 You can configure the service with the following environment variables:
 
-===================== ==================================================================================      ==========
-Variable              Description                                                                             Default
+=====================  =====================================================================================   ==========
+Variable               Description                                                                             Default
 
 
-``EASTING_PROPERTY``  The name of the property holding the "easting" value. The value itself can be
-                      either a string, float, int or decimal. If a string, it must be castable to a float.    "easting"
+``EASTING_PROPERTY``   The name of the property holding the "easting" value. The value itself can be
+                       either a string, float, int or decimal. If a string, it must be castable to a float.    "easting"
 
-``NORTHING_PROPERTY`` The name of the property holding the "northing" value. The value itself can be either   "northing"
-                      a string, float, int or decimal. If a string, it must be castable to a float.          
+``NORTHING_PROPERTY``  The name of the property holding the "northing" value. The value itself can be either   "northing"
+                       a string, float, int or decimal. If a string, it must be castable to a float.          
 
+``ZONE_PROPERTY``      The name of the property holding the "zone" value. The value itself can be either a     "zone"
+                       string, float, int or decimal. It must be castable to an int.
 
+``ZONE_DEFAULT``       The default "zone" value if none are found in the entity. The value itself can be       "32"
+                       either a string, float, int or decimal. It must be castable to an int. 
 
-   * - ``ZONE_PROPERTY``
-     - The name of the property holding the "zone" value. The value itself can be either a string, float, int or decimal. It must be castable to an int.
-     - "zone"
+``HEMI_PROPERTY``      The name of the property holding the "hemisphere" value. The value itself can be        "hemi"
+                       either a string, float, int or decimal. It must be castable to an int. A 0 value
+                       means northern hemisphere, any other value means southern hemisphere.
 
-   * - ``ZONE_DEFAULT``
-     - The default "zone" value if none are found in the entity. The value itself can be either a string, float, int or decimal. It must be castable to an int.
-     - "32"
+``HEMI_DEFAULT``       The default "hemisphere" value. The value itself can be either a string, float,         "0"
+                       int or decimal. It must be castable to an int. A 0 value means northern hemisphere,
+                       any other value means southern hemisphere.
 
-   * - ``HEMI_PROPERTY``
-     - The name of the property holding the "hemisphere" value. The value itself can be either a string, float, int or decimal. It must be castable to an int. A 0 value means northern hemisphere,
-       any other value means southern hemisphere.
-     - "0"
+``LAT_PROPERTY``       The name of the property that will hold the converted "latitude" value.                 "lat" 
 
-    * - ``HEMI_DEFAULT``
-     - The default "hemisphere" value. The value itself can be either a string, float, int or decimal. It must be castable to an int. A 0 value means northern hemisphere,
-       any other value means southern hemisphere.
-     - "0"
+``LONG_PROPERTY``      The name of the property that will hold the converted "longitude" value.                "long"
 
-    * - ``LAT_PROPERTY``
-     - The name of the property that will hold the converted "latitude" value. 
-     - "lat"
+``INCLUDE_LAT_LONG``   A flag to indicate wheter to include a lat_long value in the returned entity.           "false"
+                       A value of "true" means yes. Any other value means no.
 
-    * - ``LONG_PROPERTY``
-     - The name of the property that will hold the converted "longitude" value. 
-     - "long"
+``LAT_LONG_PROPERTY``  The name of the property that will hold the converted "lat_long" value                  "lat_long"
+                       ("lat, long"). It is only inserted in the returned entity if ``INCLUDE_LAT_LONG``
+                       evaluates to yes.
+=====================  =====================================================================================   ==========
 
-    * - ``INCLUDE_LAT_LONG``
-     - A flag to indicate wheter to include a lat_long value in the returned entity. A value of "true" means yes. Any other value means no.
-     - "false"
-
-    * - ``LAT_LONG_PROPERTY``
-     - The name of the property that will hold the converted "lat_long" value ("lat, long"). It is only inserted in the returned entity if ``INCLUDE_LAT_LONG`` evaluates to yes.
-     - "long"
-     
 When running in Docker you can either specify this in a file (see https://docs.docker.com/compose/env-file/) or on the command line with "docker run .. -e VAR1=VAL1 -e VAR2=VAL2 .."
