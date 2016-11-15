@@ -23,8 +23,13 @@ apt-get install -y \
   python3-dev \
   build-essential
 
+RUN \
+  apt-get install -y \
+  libffi-dev \
+  libyajl-dev
+
 RUN curl -sSL https://bootstrap.pypa.io/get-pip.py | python3
 COPY ./service /service
 WORKDIR /service
 RUN pip install -r requirements.txt
-CMD ["/usr//bin/python3", "transform-service.py"]
+CMD ["/usr/bin/python3", "transform-service.py"]

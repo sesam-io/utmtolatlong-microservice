@@ -3,6 +3,7 @@ import json
 import os
 import math
 import logging
+from utils import parse_json_stream, entities_to_json
 
 app = Flask(__name__)
 
@@ -139,13 +140,13 @@ def transform_entity(entity):
     if isinstance(easting_value, str):
         easting_value = easting_value.strip()
 
-    if isinstance(easting_value, str):
+    if isinstance(northing_value, str):
         northing_value = northing_value.strip()
 
-    if isinstance(easting_value, str):
+    if isinstance(zone_value, str):
         zone_value = zone_value.strip()
 
-    if isinstance(easting_value, str):
+    if isinstance(hemi_value, str):
         hemi_value = hemi_value.strip()
 
     try:
@@ -203,16 +204,16 @@ def receiver():
         for index, entity in enumerate(entities):
             if index > 0:
                 yield ","
+
+            # Transit decode
+            
+                
             entity = transform_entity(entity)
-            yield json.dumps(entity)
+            yield entities_to_json(entity)
         yield "]"
 
     # get entities from request
-    req_entities = request.get_json()
-
-    if not req_entities:
-        # Return 400 Bad request if no json in body
-        return Response(status=400, response="POST does not contain valid JSON")
+    req_entities = parse_json_stream(request.stream)
 
     # Generate the response
     try:
