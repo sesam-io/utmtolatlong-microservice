@@ -27,5 +27,4 @@ RUN curl -sSL https://bootstrap.pypa.io/get-pip.py | python3
 COPY ./service /service
 WORKDIR /service
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python3"]
-CMD ["transform-service.py"]
+CMD ["/usr//bin/python3", "transform-service.py"]

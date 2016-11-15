@@ -32,8 +32,8 @@ Running in Docker
 ::
 
   cd utmtolatlong-microservice
-  docker build -t utmtolatlong-microservicee .
-  docker run --name utmtolatlong-microservice -p 5001:5001
+  docker build -t utmtolatlong-microservice .
+  docker run -it --rm --name utmtolatlong-microservice -p 5001:5001 utmtolatlong-microservice
 
 Get the IP from docker:
 
